@@ -1,0 +1,68 @@
+<div class="outer">
+    <div *ngIf="isRadialImgVisible && isScreen400" class="radialImg">
+        <img src="../../assets/hex.jpg" usemap="#image_map" class="main-img">
+        <map name="image_map">
+            <!-- <area  class="temp3" alt="3" title="3" coords="332,103,82" shape="circle" (click)="img3Link()" (mouseover)="stopDelayedLoop3()" (mouseout)="restartDelayedLoop()">
+            <area  class="temp2" alt="2" title="2" coords="167,105,82" shape="circle" (click)="img2Link()" (mouseover)="stopDelayedLoop2()" (mouseout)="restartDelayedLoop()">
+            <area  class="temp4" alt="4" title="4" coords="414,247,80" shape="circle" (click)="img4Link()" (mouseover)="stopDelayedLoop4()" (mouseout)="restartDelayedLoop()">
+            <area  class="temp5" alt="5" title="5" coords="332,388,81" shape="circle" (click)="img5Link()" (mouseover)="stopDelayedLoop5()" (mouseout)="restartDelayedLoop()">
+            <area  class="temp6" alt="6" title="6" coords="167,392,82" shape="circle" (click)="img6Link()" (mouseover)="stopDelayedLoop6()" (mouseout)="restartDelayedLoop()">
+            <area  class="temp1" alt="1" title="1" coords="86,249,81" shape="circle" (click)="img1Link()" (mouseover)="stopDelayedLoop1()" (mouseout)="restartDelayedLoop()"> -->
+
+
+            <area  class="temp2" alt="2" title="2" coords="167,105,82" shape="circle" (click)="img2Link()" (mouseover)="stopDelayedLoop2()" >
+            <area  class="temp3" alt="3" title="3" coords="332,103,82" shape="circle" (click)="img3Link()" (mouseover)="stopDelayedLoop3()" >
+            <area  class="temp4" alt="4" title="4" coords="414,247,80" shape="circle" (click)="img4Link()" (mouseover)="stopDelayedLoop4()" >
+            <area  class="temp5" alt="5" title="5" coords="332,388,81" shape="circle" (click)="img5Link()" (mouseover)="stopDelayedLoop5()" >
+            <area  class="temp6" alt="6" title="6" coords="167,392,82" shape="circle" (click)="img6Link()" (mouseover)="stopDelayedLoop6()" >
+            <area  class="temp1" alt="1" title="1" coords="86,249,81" shape="circle" (click)="img1Link()" (mouseover)="stopDelayedLoop1()" >
+
+            
+        </map>
+    </div>
+
+    <div *ngIf="!isRadialImgVisible && isScreen400" class="radialImg">
+        <img src="../../assets/hex.jpg" usemap="#image_map" class="main-img2">
+        <map name="image_map">
+            <!-- <area class="temp2" alt="2" title="2" coords="134,84,65" shape="circle" (click)="img2Link()" (mouseover)="stopDelayedLoop2()" (mouseout)="restartDelayedLoop()"> -->
+            <area class="temp2" alt="2" title="2" coords="134,84,65" shape="circle" (click)="img2Link()" (mouseover)="stopDelayedLoop2()">
+            <area class="temp3" alt="3" title="3" coords="266,83,64" shape="circle" (click)="img3Link()">
+            <area class="temp4" alt="4" title="4" coords="333,198,65" shape="circle" (click)="img4Link()">
+            <area class="temp5" alt="5" title="5" coords="267,312,65" shape="circle" (click)="img5Link()">
+            <area class="temp6" alt="6" title="6" coords="135,313,65" shape="circle" (click)="img6Link()">
+            <area class="temp1" alt="1" title="1" coords="68,197,65" shape="circle" (click)="img1Link()">
+        </map>
+    </div>
+
+    <div *ngIf="!isScreen400" class="radialImg">
+        <img src="../../assets/hex.jpg" usemap="#image_map" class="main-img3">
+        <map name="image_map">
+            <!-- <area class="temp2" alt="2" title="2" coords="101,62,49" shape="circle" (click)="img2Link()" (mouseover)="stopDelayedLoop2()" (mouseout)="restartDelayedLoop()"> -->
+            <area class="temp2" alt="2" title="2" coords="101,62,49" shape="circle" (click)="img2Link()" (mouseover)="stopDelayedLoop2()">
+            <area class="temp3" alt="3" title="3" coords="200,62,48" shape="circle" (click)="img3Link()">
+            <area class="temp4" alt="4" title="4" coords="249,149,49" shape="circle" (click)="img4Link()">
+            <area class="temp5" alt="5" title="5" coords="199,234,48" shape="circle" (click)="img5Link()">
+            <area class="temp6" alt="6" title="6" coords="101,235,49" shape="circle" (click)="img6Link()">
+            <area class="temp1" alt="1" title="1" coords="51,148,48" shape="circle" (click)="img1Link()">
+        </map>
+    </div>
+
+
+
+
+
+
+    <div class="rightBox" [class.border-pink]="img1Clicked" [class.border-yellow]="img2Clicked"
+    [class.border-green]="img3Clicked" [class.border-orange]="img4Clicked" [class.border-light-green]="img5Clicked"
+    [class.border-blue]="img6Clicked">
+        <h4 class="content">{{selectedSerial}}&nbsp;&nbsp;{{selectedheading}}</h4>
+        <h4>
+            <ng-container
+                *ngIf="img1Clicked || img2Clicked || img3Clicked || img4Clicked || img5Clicked || img6Clicked">
+                <ul>
+                    <li *ngFor="let point of selectedContent">{{ point }}</li>
+                </ul>
+            </ng-container>
+        </h4>
+    </div>
+</div>
